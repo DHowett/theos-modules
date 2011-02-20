@@ -1,7 +1,7 @@
-ifeq ($(FW_INSTANCE),)
-	include $(FW_MODDIR)/java/master/jar.mk
+ifeq ($(THEOS_CURRENT_INSTANCE),)
+	include $(THEOS_MODULE_PATH)/java/master/jar.mk
 else
-	ifeq ($(FW_TYPE),jar)
-		include $(FW_MODDIR)/java/instance/jar.mk
+	ifeq ($(_THEOS_CURRENT_TYPE),jar)
+		include $(THEOS_MODULE_PATH)/java/instance/jar.mk
 	endif
 endif

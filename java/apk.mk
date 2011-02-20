@@ -1,7 +1,7 @@
-ifeq ($(FW_INSTANCE),)
-	include $(FW_MODDIR)/java/master/apk.mk
+ifeq ($(THEOS_CURRENT_INSTANCE),)
+	include $(THEOS_MODULE_PATH)/java/master/apk.mk
 else
-	ifeq ($(FW_TYPE),apk)
-		include $(FW_MODDIR)/java/instance/apk.mk
+	ifeq ($(_THEOS_CURRENT_TYPE),apk)
+		include $(THEOS_MODULE_PATH)/java/instance/apk.mk
 	endif
 endif
