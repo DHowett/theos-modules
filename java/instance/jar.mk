@@ -4,9 +4,9 @@ endif
 .PHONY: internal-jar-all_ internal-jar-stage_ internal-jar-compile
 
 ifeq ($(_THEOS_MAKE_PARALLEL_BUILDING), no)
-internal-jar-all_:: $(THEOS_CLASSES_DIR) $(THEOS_OBJ_DIR)/$(THEOS_CURRENT_INSTANCE).jar
+internal-jar-all_:: $(_OBJ_DIR_STAMPS) $(THEOS_CLASSES_DIR) $(THEOS_OBJ_DIR)/$(THEOS_CURRENT_INSTANCE).jar
 else
-internal-jar-all_:: $(THEOS_CLASSES_DIR)
+internal-jar-all_:: $(_OBJ_DIR_STAMPS) $(THEOS_CLASSES_DIR)
 	$(ECHO_NOTHING)$(MAKE) --no-print-directory --no-keep-going \
 		internal-jar-compile \
 		_THEOS_CURRENT_TYPE=$(_THEOS_CURRENT_TYPE) THEOS_CURRENT_INSTANCE=$(THEOS_CURRENT_INSTANCE) _THEOS_CURRENT_OPERATION=compile \
